@@ -22,16 +22,16 @@ public class KeywordsDetector {
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         for (int i = 0; i < sentences.length; i++) {
-            lowerCase(stringAt(sentences, i));
+            sentences[i] = lowerCase(sentences[i]);
         }
         for (int i = 0; i < keywords.length; i++) {
-            lowerCase(stringAt(keywords, i));
+            keywords[i] = lowerCase(keywords[i]);
         }
-        
+
         for (int i = 0; i < sentences.length; i++) {
             for (int j = 0; j < keywords.length; j++) {
-                if (contains(stringAt(sentences, i), stringAt(keywords, j)) == true) {
-                    System.out.println(stringAt(sentences, i));
+                if (contains(sentences[i], keywords[j]) == true) {
+                    System.out.println(sentences[i]);
                     j = keywords.length;
                 }
             }
@@ -75,17 +75,4 @@ public class KeywordsDetector {
         return false;
     }
 
-    public static String stringAt(String[] arr, int index) {
-        String theString = arr[0];
-        int counter = 0;
-        if (index == 0) {
-            theString = arr[counter];
-            return theString;
-        }
-        while (counter != index){
-            counter++;
-            theString = arr[counter];
-        }
-        return theString;
-    }
 }
