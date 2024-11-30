@@ -130,8 +130,11 @@ public class TesterArrayCharOps {
         char[] arr3 = {};
 
         boolean test1 = ArrCharOps.hashCode(arr1) == (long) 97;
+        System.out.println(test1);
         boolean test2 = ArrCharOps.hashCode(arr2) == (long) 300179;
+        System.out.println(test2);
         boolean test3 = ArrCharOps.hashCode(arr3) == (long) 0;
+        System.out.println(test3);
 
         int passed = (test1 ? 1 : 0) + (test2 ? 1 : 0) + (test3 ? 1 : 0);
         String verdict = passed == num_tests ? "(Passed)": "Failed";
