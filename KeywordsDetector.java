@@ -32,7 +32,7 @@ public class KeywordsDetector {
             for (int j = 0; j < keywords.length; j++) {
                 if (contains(sentences[i], keywords[j]) == true) {
                     System.out.println(sentences[i]);
-                    j = keywords.length;
+                    break;
                 }
             }
         }
@@ -64,11 +64,11 @@ public class KeywordsDetector {
         for (int i = 0; i < str1.length(); i++) {
             int counter1 = i;
             int counter2 = 0;
-            while (counter2 < str2.length() && str2.charAt(counter2) == str1.charAt(counter1)) {
+            while (counter1 < str1.length() && counter2 < str2.length() && str2.charAt(counter2) == str1.charAt(counter1)) {
                 counter1++;
                 counter2++;
             } 
-            if (counter2 == str2.length()){
+            if (counter2 == str2.length() - 1){
                 return true;
             }
         }
